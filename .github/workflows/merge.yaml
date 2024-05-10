@@ -1,0 +1,10 @@
+name: merge
+on:
+ merge_group:
+
+jobs:
+ test:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v3
+     - run: echo hello
