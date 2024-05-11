@@ -1,6 +1,7 @@
 name: merge
 on:
- merge_group:
+  pull_request:
+  merge_group:
 
 jobs:
  test:
