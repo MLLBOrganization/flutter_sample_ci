@@ -10,6 +10,6 @@ void main() {
 
   test("getGreeting should return Hello, {name}!", () {
     final result = sut.getGreeting("Flutter");
-    expect(result, "Hello, Python!");
+    expect(result, "Hello, Flutter!");
   });
 }
