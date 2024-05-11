@@ -69,7 +69,7 @@ linter:
     prefer_spread_collections: true
     prefer_typing_uninitialized_variables: true
     # 好みによって切り替える(trueにすると大変そう)
-    public_member_api_docs: true
+    # public_member_api_docs: true
     recursive_getters: true
     require_trailing_commas: true
     sized_box_for_whitespace: true
