@@ -1,11 +1,10 @@
 name: merge
 on:
-  pull_request:
   merge_group:
 
 jobs:
- test:
-    name: Test
+  CI:
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
