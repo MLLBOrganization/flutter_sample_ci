@@ -22,11 +22,21 @@ jobs:
       - name: Analyze
         run: flutter analyze
       - name: Test
-        run: flutter test --coverage
+        run: flutter test --name "Widget.*"  --coverage --coverage-path="coverage/widget_tests/lcov.info"
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage/widget_tests
+          flags: widget_tests
+      - name: Test
+        run: flutter test --name "Unit.*"  --coverage --coverage-path="coverage/unit_tests/lcov.info"
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage/unit_tests
+          flags: unit_tests
       - name: Run only on merge_group
         if: github.event_name == 'merge_group'
         run: echo "This step runs only on merge_group events."
