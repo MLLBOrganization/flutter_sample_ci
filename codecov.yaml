@@ -3,4 +3,40 @@ coverage:
     project:
       default:
         target: 80%
-        threshold: 10%
+        threshold: 5%
+      unit_tests:
+        target: 80%
+        threshold: 5%
+      widget_tests:
+        target: 70%
+        threshold: 5%
+ignore:
+  - "lib/main.dart"
+flag_management:
+  default_rules: # the rules that will be followed for any flag added, generally
+    carryforward: true
+    statuses:
+      - type: project
+        target: auto
+        threshold: 5%
+      - type: patch
+        target: 70%
+  individual_flags: # exceptions to the default rules above, stated flag by flag
+    - name: unit_tests  #fill in your own flag name
+      paths: 
+      - lib/domain  #fill in your own path. Note, accepts globs, not regexes
+      carryforward: true
+      statuses:
+        - type: project
+          target: 80%
+        - type: patch
+          target: 100%
+    - name: widget_tests #fill in your own flag name
+      paths: 
+      - src/presentations  #fill in your own path. Note, accepts globs, not regexes
+      carryforward: true
+      statuses:
+      - type: project
+        target: 70%
+      - type: patch
+        target: 20%
