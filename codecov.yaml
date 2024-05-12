@@ -33,7 +33,7 @@ flag_management:
           target: 100%
     - name: widget_tests #fill in your own flag name
       paths: 
-      - src/presentations  #fill in your own path. Note, accepts globs, not regexes
+      - lib/presentations  #fill in your own path. Note, accepts globs, not regexes
       carryforward: true
       statuses:
       - type: project
