@@ -41,4 +41,11 @@ jobs:
           flags: unit_tests
       - name: Run only on merge_group
         if: github.event_name == 'merge_group'
-        run: echo "This step runs only on merge_group events."
+        #run: echo "This step runs only on merge_group events."
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          arch: x86_64
+          profile: Nexus 6
+          script: flutter test integration_test --verbose
+        
